@@ -26,7 +26,7 @@ class TrackTest {
     @Test
     void testToString() {
         Track track = new Track("SongA", "ArtistA", 3.5);
-        String expected = "Title: SongA | Artist: ArtistA | Duration: 3.5";
+        String expected = "Title: SongA | Artist: ArtistA | Duration: 3.5\n";
         assertEquals(expected, track.toString());
     }
 }

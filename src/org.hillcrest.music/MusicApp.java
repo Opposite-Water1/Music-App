@@ -2,7 +2,6 @@ package org.hillcrest.music;
 
 import java.util.Scanner;
 
-
 public class MusicApp {
     /***
      * Samhith Vajjala

@@ -1,5 +1,8 @@
 package org.hillcrest.music;
 
+/**
+ * Creates a track that can be added, removed, and displayed
+ */
 public class Track {
     private String title;
     private String artist;

@@ -1,5 +1,8 @@
 package org.hillcrest.music;
 
+/**
+ * Creates a playlist that songs can be added to, removed from, and displayed like list
+ */
 public class Playlist {
     private Track[] tracks;
     private int currentSize;
@@ -17,16 +20,15 @@ public class Playlist {
      *
      * @param track takes a track object and adds it into the Playlist array
      */
-    public void addTrack(Track track) {
+    public String addTrack(Track track) {
         if (track.getDuration() < 0) {
-            System.out.println("Invalid length. Track not added.");
-            return;
+            return "Invalid length. Track not added.";
         }
         if (currentSize == tracks.length) {
             growArray();
         }
         tracks[currentSize++] = track;
-        System.out.println("Track added!");
+        return "Track added!";
     }
 
     /***
@@ -34,17 +36,16 @@ public class Playlist {
      *
      * @param title takes the title of the song and removes it from the Playlist array
      */
-    public void removeTrack(String title) {
+    public String removeTrack(String title) {
         int index = findTrackIndex(title);
         if (index == -1) {
-            System.out.println("Track not found.");
-            return;
+            return "Track not found.";
         }
         for (int i = index; i < currentSize - 1; i++) {
             tracks[i] = tracks[i + 1];
         }
         tracks[--currentSize] = null;
-        System.out.println("Track removed.");
+        return "Track removed.";
     }
 
     /***
